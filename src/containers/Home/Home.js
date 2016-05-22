@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import { CounterButton, GithubButton } from 'components';
 import config from '../../config';
 import Helmet from 'react-helmet';
+import { Button, Image, Breadcrumb, Tabs, Tab } from 'react-bootstrap';
 
 export default class Home extends Component {
   render() {
@@ -154,19 +155,26 @@ export default class Home extends Component {
             </dd>
           </dl>
 
-          <h3>From the author</h3>
-
-          <p>
-            I cobbled this together from a wide variety of similar "starter" repositories. As I post this in June 2015,
-            all of these libraries are right at the bleeding edge of web development. They may fall out of fashion as
-            quickly as they have come into it, but I personally believe that this stack is the future of web development
-            and will survive for several years. I'm building my new projects like this, and I recommend that you do,
-            too.
-          </p>
-
-          <p>Thanks for taking the time to check this out.</p>
-
-          <p>– Erik Rasmussen</p>
+          <h3>Adding various bootstrap elements</h3>
+            <Button bsStyle="primary" bsSize="large" block>Block level button</Button>
+            <Button bsSize="large" block>Block level button</Button>
+              <Image src="/assets/thumbnail.png" rounded />
+              <Breadcrumb>
+                <Breadcrumb.Item href="#">
+                  Home
+                </Breadcrumb.Item>
+                <Breadcrumb.Item href="http://getbootstrap.com/components/#breadcrumbs">
+                  Library
+                </Breadcrumb.Item>
+                <Breadcrumb.Item active>
+                  Data
+                </Breadcrumb.Item>
+              </Breadcrumb>
+               <Tabs defaultActiveKey={2} id="uncontrolled-tab-example">
+                <Tab eventKey={1} title="Tab 1">Tab 1 content</Tab>
+                <Tab eventKey={2} title="Tab 2">Tab 2 content</Tab>
+                <Tab eventKey={3} title="Tab 3" disabled>Tab 3 content</Tab>
+              </Tabs>
         </div>
       </div>
     );
